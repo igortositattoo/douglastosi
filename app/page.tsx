@@ -133,36 +133,54 @@ export default function Home() {
       }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1.2rem" }}>
           {/* Balança da justiça animada */}
-          <svg width="80" height="70" viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ opacity: 0.85 }}>
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ opacity: 0.85 }}>
             <style>{`
-              @keyframes balance {
+              @keyframes balanceScale {
                 0%   { transform: rotate(0deg); }
-                25%  { transform: rotate(8deg); }
-                75%  { transform: rotate(-8deg); }
+                30%  { transform: rotate(10deg); }
+                70%  { transform: rotate(-10deg); }
                 100% { transform: rotate(0deg); }
               }
-              .scale-beam { transform-origin: 40px 18px; animation: balance 2.2s ease-in-out infinite; }
+              .scale-arm { transform-origin: 50px 22px; animation: balanceScale 2.6s ease-in-out infinite; }
             `}</style>
+            {/* Topo — argola */}
+            <circle cx="50" cy="6" r="4" fill="none" stroke="#E8E8E8" strokeWidth="1.5"/>
             {/* Haste vertical */}
-            <line x1="40" y1="18" x2="40" y2="62" stroke="#E8E8E8" strokeWidth="1.5"/>
+            <line x1="50" y1="10" x2="50" y2="80" stroke="#E8E8E8" strokeWidth="1.5"/>
             {/* Base */}
-            <line x1="28" y1="62" x2="52" y2="62" stroke="#E8E8E8" strokeWidth="1.5" strokeLinecap="round"/>
-            {/* Topo */}
-            <circle cx="40" cy="8" r="3" fill="#E8E8E8"/>
-            <line x1="40" y1="8" x2="40" y2="18" stroke="#E8E8E8" strokeWidth="1.5"/>
+            <line x1="32" y1="80" x2="68" y2="80" stroke="#E8E8E8" strokeWidth="2" strokeLinecap="round"/>
+            <line x1="38" y1="80" x2="38" y2="84" stroke="#E8E8E8" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="62" y1="80" x2="62" y2="84" stroke="#E8E8E8" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="34" y1="84" x2="66" y2="84" stroke="#E8E8E8" strokeWidth="1.5" strokeLinecap="round"/>
+
             {/* Braço que balança */}
-            <g className="scale-beam">
-              <line x1="12" y1="18" x2="68" y2="18" stroke="#E8E8E8" strokeWidth="1.5" strokeLinecap="round"/>
-              {/* Correntes esquerda */}
-              <line x1="12" y1="18" x2="10" y2="30" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="2 2"/>
-              <line x1="12" y1="18" x2="14" y2="30" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="2 2"/>
+            <g className="scale-arm">
+              {/* Barra horizontal */}
+              <line x1="10" y1="22" x2="90" y2="22" stroke="#E8E8E8" strokeWidth="1.8" strokeLinecap="round"/>
+              {/* Centro — pino */}
+              <circle cx="50" cy="22" r="2.5" fill="#E8E8E8"/>
+
+              {/* Correntes esquerda — 3 segmentos */}
+              <line x1="10" y1="22" x2="8"  y2="34" stroke="#E8E8E8" strokeWidth="1.2" strokeLinecap="round"/>
+              <line x1="10" y1="22" x2="12" y2="34" stroke="#E8E8E8" strokeWidth="1.2" strokeLinecap="round"/>
+              <line x1="8"  y1="34" x2="7"  y2="46" stroke="#E8E8E8" strokeWidth="1.2" strokeLinecap="round"/>
+              <line x1="12" y1="34" x2="13" y2="46" stroke="#E8E8E8" strokeWidth="1.2" strokeLinecap="round"/>
+              <line x1="7"  y1="46" x2="6"  y2="56" stroke="#E8E8E8" strokeWidth="1.2" strokeLinecap="round"/>
+              <line x1="13" y1="46" x2="14" y2="56" stroke="#E8E8E8" strokeWidth="1.2" strokeLinecap="round"/>
               {/* Prato esquerdo */}
-              <ellipse cx="12" cy="31" rx="9" ry="2.5" fill="none" stroke="#E8E8E8" strokeWidth="1.2"/>
-              {/* Correntes direita */}
-              <line x1="68" y1="18" x2="66" y2="30" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="2 2"/>
-              <line x1="68" y1="18" x2="70" y2="30" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="2 2"/>
+              <line x1="6" y1="56" x2="14" y2="56" stroke="#E8E8E8" strokeWidth="1" strokeLinecap="round"/>
+              <ellipse cx="10" cy="57" rx="10" ry="2.5" fill="none" stroke="#E8E8E8" strokeWidth="1.4"/>
+
+              {/* Correntes direita — 3 segmentos */}
+              <line x1="90" y1="22" x2="88" y2="34" stroke="#E8E8E8" strokeWidth="1.2" strokeLinecap="round"/>
+              <line x1="90" y1="22" x2="92" y2="34" stroke="#E8E8E8" strokeWidth="1.2" strokeLinecap="round"/>
+              <line x1="88" y1="34" x2="87" y2="46" stroke="#E8E8E8" strokeWidth="1.2" strokeLinecap="round"/>
+              <line x1="92" y1="34" x2="93" y2="46" stroke="#E8E8E8" strokeWidth="1.2" strokeLinecap="round"/>
+              <line x1="87" y1="46" x2="86" y2="56" stroke="#E8E8E8" strokeWidth="1.2" strokeLinecap="round"/>
+              <line x1="93" y1="46" x2="94" y2="56" stroke="#E8E8E8" strokeWidth="1.2" strokeLinecap="round"/>
               {/* Prato direito */}
-              <ellipse cx="68" cy="31" rx="9" ry="2.5" fill="none" stroke="#E8E8E8" strokeWidth="1.2"/>
+              <line x1="86" y1="56" x2="94" y2="56" stroke="#E8E8E8" strokeWidth="1" strokeLinecap="round"/>
+              <ellipse cx="90" cy="57" rx="10" ry="2.5" fill="none" stroke="#E8E8E8" strokeWidth="1.4"/>
             </g>
           </svg>
           <div style={{
