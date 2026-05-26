@@ -165,7 +165,7 @@ body {
 
 @keyframes slideFromLeftPhoto {
   from { opacity: 0; transform: translateX(-50px); }
-  to   { opacity: 0.4; transform: translateX(0); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 .slide-from-left {
@@ -225,9 +225,16 @@ body {
 }
 
 /* Navbar */
+.nav-logo-name {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  background: none !important;
+  background-image: none !important;
+}
+
 .nav-link {
   position: relative;
-  color: #aaa;
+  color: #333;
   transition: color 0.3s;
   font-family: 'Arial', sans-serif;
   font-size: 0.85rem;
@@ -242,11 +249,11 @@ body {
   left: 0;
   width: 0;
   height: 1px;
-  background: linear-gradient(90deg, #ff6600, #E8E8E8);
+  background: #000;
   transition: width 0.3s;
 }
 
-.nav-link:hover { color: #E8E8E8; }
+.nav-link:hover { color: #000; }
 .nav-link:hover::after { width: 100%; }
 
 /* Section divider */

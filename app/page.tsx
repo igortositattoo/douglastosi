@@ -119,8 +119,8 @@ export default function Home() {
         position: "sticky",
         top: 0,
         zIndex: 100,
-        background: scrolled ? "rgba(10,10,10,0.98)" : "#000000",
-        borderBottom: "1px solid rgba(232,232,232,0.2)",
+        background: scrolled ? "rgba(255,255,255,0.98)" : "#ffffff",
+        borderBottom: "1px solid rgba(0,0,0,0.08)",
         backdropFilter: "blur(10px)",
         padding: "0 2rem",
         height: "68px",
@@ -136,14 +136,15 @@ export default function Home() {
           transform: logoVisible ? "translateX(0)" : "translateX(-30px)",
           transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
         }}>
-          <span className="nav-logo-name" style={{
+          <span style={{
             fontFamily: "var(--font-playfair), Georgia, serif",
             fontWeight: "bold",
             fontSize: "1.2rem",
             letterSpacing: "0.05em",
-            background: "linear-gradient(135deg, #E8E8E8, #F5F5F5)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
+            color: "#000000",
+            WebkitTextFillColor: "#000000",
+            background: "none",
+            WebkitBackgroundClip: "unset",
           }}>
             Douglas Miranda Tosi
           </span>
@@ -152,7 +153,7 @@ export default function Home() {
             fontSize: "0.6rem",
             letterSpacing: "0.2em",
             textTransform: "uppercase",
-            color: "#888",
+            color: "#555",
           }}>
             Advogado Criminalista
           </span>
@@ -173,8 +174,8 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              background: "linear-gradient(135deg, #E8E8E8, #F5F5F5)",
-              color: "#000000",
+              background: "#000000",
+              color: "#ffffff",
               padding: "8px 22px",
               borderRadius: "2px",
               textDecoration: "none",
@@ -191,7 +192,7 @@ export default function Home() {
 
         {/* Mobile */}
         <button onClick={() => setMenuOpen(!menuOpen)} className="nav-mobile-btn" style={{
-          background: "none", border: "none", color: "#E8E8E8",
+          background: "none", border: "none", color: "#000000",
           fontSize: "1.5rem", cursor: "pointer", display: "none",
         }}>
           {menuOpen ? "✕" : "☰"}
@@ -246,11 +247,6 @@ export default function Home() {
               objectFit: "contain",
               objectPosition: "bottom left",
               display: "block",
-              maskImage: "linear-gradient(to left, transparent 0%, black 20%, black 70%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)",
-              maskComposite: "intersect",
-              WebkitMaskImage: "linear-gradient(to left, transparent 0%, black 20%, black 70%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)",
-              WebkitMaskComposite: "source-in",
-              filter: "brightness(0.7)",
             }}
           />
         </div>
@@ -269,16 +265,6 @@ export default function Home() {
           opacity: 1,
           transform: `translateY(${photoY * 0.25}px)`,
         }}>
-          {/* Overlay topo mobile */}
-          <div className="hero-photo-right-top-overlay" style={{
-            display: "none",
-            position: "absolute",
-            top: 0, left: 0, right: 0,
-            height: "22%",
-            background: "linear-gradient(to bottom, #000 0%, #000 30%, transparent 100%)",
-            zIndex: 4,
-            pointerEvents: "none",
-          }} />
           <div className="photo-float" style={{ height: "100%", display: "flex", alignItems: "flex-end", justifyContent: "flex-end" }}>
           <img
             src="/doug.jpg"
@@ -291,12 +277,6 @@ export default function Home() {
               objectFit: "contain",
               objectPosition: "bottom right",
               display: "block",
-              maskImage: "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)",
-              maskComposite: "intersect",
-              WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)",
-              WebkitMaskComposite: "source-in",
-              mixBlendMode: "lighten",
-              filter: "brightness(0.85)",
             }}
           />
           </div>
@@ -385,7 +365,7 @@ export default function Home() {
             </a>
           </div>
           <p className="hero-subtext" style={{
-            color: "#666",
+            color: "#ffffff",
             fontSize: "0.8rem",
             lineHeight: 1.9,
             marginTop: "1.2rem",
@@ -564,19 +544,6 @@ export default function Home() {
           <source src="/fundopaginad.mov" type="video/mp4" />
         </video>
 
-        {/* Overlay desktop — fade todos os lados */}
-        <div className="fundo-video-overlay-desktop" style={{ position: "absolute", top: 0, left: "-8%", width: "135vw", height: "165vh", zIndex: 1, pointerEvents: "none",
-          background: "linear-gradient(to bottom, #000 0%, transparent 20%), linear-gradient(to top, #000 0%, transparent 20%), linear-gradient(to right, #000 0%, transparent 30%), linear-gradient(to left, #000 0%, #000 55%, transparent 95%)",
-        }} />
-
-        {/* Overlay mobile — fade borda direita e topo */}
-        <div className="fundo-video-overlay" style={{ display: "none", position: "absolute", top: 0, left: "-10%", width: "60vw", height: "80vh", zIndex: 1, pointerEvents: "none",
-          background: "linear-gradient(to bottom, #000 0%, transparent 30%), linear-gradient(to left, #000 0%, transparent 40%), linear-gradient(to right, #000 0%, transparent 90%)",
-        }} />
-        {/* Overlay mobile — fade borda baixo */}
-        <div className="fundo-video-overlay-bottom" style={{ display: "none", position: "absolute", top: "50vh", left: 0, width: "60vw", height: "35vh", zIndex: 1, pointerEvents: "none",
-          background: "linear-gradient(to top, #000 0%, transparent 100%)",
-        }} />
 
 
 
@@ -715,12 +682,12 @@ export default function Home() {
             <details key={i} className="sobre-card-mobile" style={{ borderBottom: "1px solid rgba(232,232,232,0.05)" }}>
               <summary style={{
                 color: "#E8E8E8", padding: "0.9rem 0", display: "flex", justifyContent: "center", alignItems: "center", gap: "0.5rem",
-                fontFamily: "var(--font-inter), Arial, sans-serif", fontSize: "0.65rem",
+                fontFamily: "var(--font-inter), Arial, sans-serif", fontSize: "0.8rem",
                 letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", listStyle: "none",
               }}>
                 {card.titulo} <span style={{ color: "#666" }}>+</span>
               </summary>
-              <p style={{ color: "#888", fontSize: "0.65rem", lineHeight: 1.8, fontFamily: "var(--font-inter), Arial, sans-serif", margin: "0 0 0.9rem 0", textAlign: "left", animation: "cardOpen 0.6s ease forwards" }}>
+              <p style={{ color: "#ffffff", fontSize: "0.65rem", lineHeight: 1.8, fontFamily: "var(--font-inter), Arial, sans-serif", fontWeight: "500", margin: "0 0 0.9rem 0", textAlign: "left", animation: "cardOpen 0.6s ease forwards" }}>
                 {card.texto}
               </p>
             </details>
@@ -815,7 +782,7 @@ export default function Home() {
           { num: "05", text: "Secretário-Geral da ANACRIM – Mato Grosso" },
         ].map((q) => (
           <div key={q.num} style={{ display: "flex", alignItems: "center", gap: "1.2rem", padding: "1rem 0", borderBottom: "1px solid rgba(232,232,232,0.07)" }}>
-            <span style={{ color: "rgba(232,232,232,0.25)", fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "0.8rem", fontWeight: "600", minWidth: "22px" }}>{q.num}</span>
+            <span style={{ color: "#ffffff", fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "0.8rem", fontWeight: "600", minWidth: "22px" }}>{q.num}</span>
             <div style={{ width: "18px", height: "1px", background: "rgba(232,232,232,0.25)", flexShrink: 0 }} />
             <span style={{ fontFamily: "var(--font-inter), Arial, sans-serif", fontSize: "0.8rem", color: "#ccc" }}>{q.text}</span>
           </div>
@@ -1236,37 +1203,37 @@ export default function Home() {
           .nav-desktop { display: none !important; }
           .nav-mobile-btn { display: block !important; }
           .areas-tab-mobile { display: none !important; }
-          .nav-logo-name { font-size: 0.95rem !important; -webkit-text-fill-color: #E8E8E8 !important; color: #E8E8E8 !important; }
+          .nav-logo-name { font-size: 0.95rem !important; -webkit-text-fill-color: #000000 !important; color: #000000 !important; }
           .nav-logo-sub { font-size: 0.5rem !important; }
 
           /* Hero — mantém layout desktop, só escala */
           #inicio { min-height: 100vw !important; overflow: visible !important; }
           #sobre { z-index: 5 !important; }
           .hero-photo-right { z-index: 2 !important; }
-          .hero-photo-right-img { -webkit-mask-image: linear-gradient(to bottom right, transparent 0%, black 35%, black 65%, transparent 85%) !important; mask-image: linear-gradient(to bottom right, transparent 0%, black 35%, black 65%, transparent 85%) !important; }
+          .hero-photo-right-img { -webkit-mask-image: none !important; mask-image: none !important; }
           .hero-sidebar { display: none !important; }
           .hero-photo-left {
             width: 80% !important;
             top: 0 !important;
             bottom: 0 !important;
             left: -8% !important;
-            opacity: 0.55 !important;
-            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%) !important;
-            mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%) !important;
+            opacity: 1 !important;
+            -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%) !important;
+            mask-image: linear-gradient(to bottom, black 55%, transparent 100%) !important;
             pointer-events: none !important;
             z-index: 1 !important;
           }
           .hero-photo-right {
-            width: 70% !important;
+            width: 75% !important;
             top: 0 !important;
-            right: -18% !important;
-            opacity: 0.8 !important;
+            right: -12% !important;
+            opacity: 1 !important;
             pointer-events: none !important;
           }
           .photo-float { animation: none !important; }
           .hero-photo-right-img {
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%, black 35%, transparent 100%), linear-gradient(to top, transparent 0%, black 30%) !important;
-            mask-image: linear-gradient(to right, transparent 0%, black 30%, black 35%, transparent 100%), linear-gradient(to top, transparent 0%, black 30%) !important;
+            -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 15%, black 80%, transparent 100%) !important;
+            mask-image: linear-gradient(to left, black 40%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 15%, black 80%, transparent 100%) !important;
             -webkit-mask-composite: source-in !important;
             mask-composite: intersect !important;
           }
@@ -1306,9 +1273,9 @@ export default function Home() {
             position: absolute !important; top: 120px !important; left: 0 !important;
             transform: none !important; width: 100% !important; height: 350px !important;
             object-fit: cover !important;
-            filter: brightness(0.35) contrast(1.1) !important;
-            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 85%, transparent 100%) !important;
-            mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 85%, transparent 100%) !important;
+            filter: none !important;
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 75%, transparent 100%) !important;
+            mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 75%, transparent 100%) !important;
             z-index: 0 !important;
           }
           .areas-tagline { order: 1 !important; position: relative !important; z-index: 2 !important; margin-top: -20px !important; }
@@ -1322,9 +1289,9 @@ export default function Home() {
             position: absolute !important; top: 3% !important; left: -14% !important;
             width: 90% !important; height: 420px !important;
             object-fit: cover !important; object-position: center top !important;
-            filter: brightness(0.45) contrast(1.1) !important;
-            -webkit-mask-image: linear-gradient(to right, black 95%, transparent 100%), linear-gradient(to bottom, black 70%, transparent 100%) !important;
-            mask-image: linear-gradient(to right, black 95%, transparent 100%), linear-gradient(to bottom, black 70%, transparent 100%) !important;
+            filter: none !important;
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%) !important;
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%) !important;
             -webkit-mask-composite: source-in !important;
             mask-composite: intersect !important;
             z-index: 0 !important; pointer-events: none !important;
@@ -1336,7 +1303,7 @@ export default function Home() {
           @keyframes photoSlideIn { from { opacity: 0; transform: scaleX(-1) translateX(-30%); } to { opacity: 1; transform: scaleX(-1) translateX(-10%); } }
           @keyframes photoFloat { 0%, 100% { transform: scaleX(-1) translateX(-10%) scale(1); } 50% { transform: scaleX(-1) translateX(-12%) scale(1.03); } }
           .areas-list::before { content: '' !important; position: absolute !important; inset: 0 !important; background-image: url('/dougskin.jpg') !important; background-size: cover !important; background-position: center top !important; z-index: 0 !important; animation: photoSlideIn 1s ease-out forwards, photoFloat 8s ease-in-out 1s infinite !important; }
-          .areas-list::after { content: '' !important; position: absolute !important; inset: 0 !important; background: linear-gradient(to bottom, #000 0%, transparent 20%, transparent 50%, #000 90%), linear-gradient(to left, #000 0%, transparent 40%) !important; z-index: 1 !important; pointer-events: none !important; }
+          .areas-list::after { content: '' !important; position: absolute !important; inset: 0 !important; background: linear-gradient(to bottom, transparent 70%, #000 100%) !important; z-index: 1 !important; pointer-events: none !important; }
           .areas-list { position: relative !important; }
           .areas-list-item { position: relative !important; z-index: 2 !important; }
 
@@ -1347,8 +1314,8 @@ export default function Home() {
           .contato-glow { display: none !important; }
           .contato-emoji { display: none !important; }
           .contato-left { height: 460px !important; min-height: unset !important; padding: 1.5rem 1rem !important; overflow: hidden !important; align-items: flex-start !important; justify-content: flex-start !important; }
-          .contato-left::after { content: '' !important; position: absolute !important; bottom: 0 !important; left: 0 !important; right: 0 !important; height: 40% !important; background: linear-gradient(to bottom, transparent, #000) !important; z-index: 1 !important; pointer-events: none !important; }
-          .contato-left::before { content: '' !important; position: absolute !important; inset: 0 !important; background: linear-gradient(to bottom, #000 0%, #000 15%, transparent 50%), linear-gradient(to right, #000 0%, transparent 35%), linear-gradient(to left, #000 0%, transparent 35%) !important; z-index: 2 !important; pointer-events: none !important; }
+          .contato-left::after { content: '' !important; position: absolute !important; inset: 0 !important; background: linear-gradient(to bottom, transparent 60%, #000 100%) !important; z-index: 1 !important; pointer-events: none !important; }
+          .contato-left::before { content: none !important; }
           .contato-content { background: transparent !important; position: absolute !important; inset: 0 !important; z-index: 3 !important; display: flex !important; flex-direction: column !important; justify-content: flex-start !important; align-items: center !important; padding: 0.3rem 1rem 0 !important; }
           .contato-info { display: none !important; }
           .contato-info-mobile { display: block !important; }
