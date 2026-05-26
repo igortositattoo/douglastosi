@@ -131,16 +131,50 @@ export default function Home() {
         opacity: pageLoaded ? 0 : 1,
         transition: "opacity 0.8s ease",
       }}>
-        <div style={{
-          fontFamily: "var(--font-playfair), Georgia, serif",
-          fontSize: "1.1rem",
-          letterSpacing: "0.25em",
-          textTransform: "uppercase",
-          color: "#E8E8E8",
-          opacity: 0.7,
-          animation: "fadeUp 0.6s ease forwards",
-        }}>
-          Douglas Miranda Tosi
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1.2rem" }}>
+          {/* Balança da justiça animada */}
+          <svg width="80" height="70" viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ opacity: 0.85 }}>
+            <style>{`
+              @keyframes balance {
+                0%   { transform: rotate(0deg); }
+                25%  { transform: rotate(8deg); }
+                75%  { transform: rotate(-8deg); }
+                100% { transform: rotate(0deg); }
+              }
+              .scale-beam { transform-origin: 40px 18px; animation: balance 2.2s ease-in-out infinite; }
+            `}</style>
+            {/* Haste vertical */}
+            <line x1="40" y1="18" x2="40" y2="62" stroke="#E8E8E8" strokeWidth="1.5"/>
+            {/* Base */}
+            <line x1="28" y1="62" x2="52" y2="62" stroke="#E8E8E8" strokeWidth="1.5" strokeLinecap="round"/>
+            {/* Topo */}
+            <circle cx="40" cy="8" r="3" fill="#E8E8E8"/>
+            <line x1="40" y1="8" x2="40" y2="18" stroke="#E8E8E8" strokeWidth="1.5"/>
+            {/* Braço que balança */}
+            <g className="scale-beam">
+              <line x1="12" y1="18" x2="68" y2="18" stroke="#E8E8E8" strokeWidth="1.5" strokeLinecap="round"/>
+              {/* Correntes esquerda */}
+              <line x1="12" y1="18" x2="10" y2="30" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="2 2"/>
+              <line x1="12" y1="18" x2="14" y2="30" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="2 2"/>
+              {/* Prato esquerdo */}
+              <ellipse cx="12" cy="31" rx="9" ry="2.5" fill="none" stroke="#E8E8E8" strokeWidth="1.2"/>
+              {/* Correntes direita */}
+              <line x1="68" y1="18" x2="66" y2="30" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="2 2"/>
+              <line x1="68" y1="18" x2="70" y2="30" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="2 2"/>
+              {/* Prato direito */}
+              <ellipse cx="68" cy="31" rx="9" ry="2.5" fill="none" stroke="#E8E8E8" strokeWidth="1.2"/>
+            </g>
+          </svg>
+          <div style={{
+            fontFamily: "var(--font-playfair), Georgia, serif",
+            fontSize: "1.1rem",
+            letterSpacing: "0.25em",
+            textTransform: "uppercase",
+            color: "#E8E8E8",
+            opacity: 0.7,
+          }}>
+            Douglas Miranda Tosi
+          </div>
         </div>
       </div>
 
@@ -336,7 +370,7 @@ export default function Home() {
             textAlign: "left",
             width: "100%",
           }}>
-            <span className="word-move-1" style={{ fontSize: "clamp(1.2rem, 2vw, 2rem)", fontWeight: "100", color: "#bbb", display: "block", marginLeft: "4rem", textTransform: "uppercase" }}>
+            <span className="word-move-1" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2.5rem)", fontWeight: "400", color: "#ffffff", display: "block", marginLeft: "4rem", textTransform: "uppercase" }}>
               Sua
             </span>
             <span className="word-move-2" style={{ fontSize: "clamp(4rem, 8vw, 8rem)", fontWeight: "100", color: "#fff", display: "block", marginLeft: "-0.5rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>
@@ -1271,11 +1305,11 @@ export default function Home() {
             padding: 0 1rem !important;
             max-width: 100% !important;
           }
-          .word-move-1 { font-size: 0.7rem !important; }
+          .word-move-1 { font-size: 1rem !important; color: #ffffff !important; font-weight: 400 !important; }
           .word-move-2 { font-size: clamp(2rem, 11vw, 3.2rem) !important; font-weight: 700 !important; }
           .word-move-3 { font-size: clamp(1rem, 4.5vw, 1.5rem) !important; }
           .word-comeca { font-size: clamp(1.3rem, 6vw, 2rem) !important; }
-          .hero-btn { padding: 6px 12px !important; font-size: 0.45rem !important; letter-spacing: 0.08em !important; }
+          .hero-btn { padding: 6px 13px !important; font-size: 0.52rem !important; letter-spacing: 0.08em !important; }
           .hero-btn-wrapper { margin-top: 1rem !important; justify-content: flex-start !important; }
           .hero-subtext { font-size: 0.6rem !important; margin-top: 11rem !important; }
 
