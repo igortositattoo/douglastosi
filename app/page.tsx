@@ -18,8 +18,8 @@ function useReveal(threshold = 0.15) {
   return [ref, visible] as const;
 }
 
-const WHATSAPP = "https://wa.me/5541920512260";
-const PHONE = "(41) 9 2051-2260";
+const WHATSAPP = "https://wa.me/55419920512260";
+const PHONE = "(41) 992051-2260";
 
 const areas = [
   { num: "01", title: "Direito Penal e Processo Penal", desc: "Defesa técnica completa em todas as fases do processo criminal, do inquérito ao trânsito em julgado." },
@@ -1354,8 +1354,10 @@ export default function Home() {
             width: 90% !important; height: 420px !important;
             object-fit: cover !important; object-position: center top !important;
             filter: none !important;
-            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%) !important;
-            mask-image: linear-gradient(to bottom, black 60%, transparent 100%) !important;
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%), linear-gradient(to right, black 65%, transparent 100%) !important;
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%), linear-gradient(to right, black 65%, transparent 100%) !important;
+            -webkit-mask-composite: source-in !important;
+            mask-composite: intersect !important;
             -webkit-mask-composite: source-in !important;
             mask-composite: intersect !important;
             z-index: 0 !important; pointer-events: none !important;
