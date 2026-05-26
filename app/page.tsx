@@ -46,6 +46,7 @@ const allAreas = [
 ];
 
 export default function Home() {
+  const [pageLoaded, setPageLoaded] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [logoVisible, setLogoVisible] = useState(false);
   const [nameVisible, setNameVisible] = useState(false);
@@ -66,6 +67,13 @@ export default function Home() {
   useEffect(() => {
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
     window.scrollTo(0, 0);
+    const onLoad = () => setTimeout(() => setPageLoaded(true), 300);
+    if (document.readyState === "complete") {
+      onLoad();
+    } else {
+      window.addEventListener("load", onLoad);
+      return () => window.removeEventListener("load", onLoad);
+    }
     setTimeout(() => setLogoVisible(true), 150);
   }, []);
 
@@ -113,6 +121,28 @@ export default function Home() {
 
   return (
     <div style={{ color: "#fff", minHeight: "100vh", background: "#000000" }}>
+
+      {/* Loading screen */}
+      <div style={{
+        position: "fixed", inset: 0, zIndex: 9999,
+        background: "#000",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        pointerEvents: pageLoaded ? "none" : "all",
+        opacity: pageLoaded ? 0 : 1,
+        transition: "opacity 0.8s ease",
+      }}>
+        <div style={{
+          fontFamily: "var(--font-playfair), Georgia, serif",
+          fontSize: "1.1rem",
+          letterSpacing: "0.25em",
+          textTransform: "uppercase",
+          color: "#E8E8E8",
+          opacity: 0.7,
+          animation: "fadeUp 0.6s ease forwards",
+        }}>
+          Douglas Miranda Tosi
+        </div>
+      </div>
 
       {/* NAVBAR */}
       <nav style={{
